@@ -1,20 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title size="large">Ionic Search Filter Example</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!-- Searchbar -->
+    <ion-searchbar placeholder="Filter Data" [(ngModel)]="term"></ion-searchbar>
+
+    <!-- List Data -->
+    <ion-list>
+        <ion-item *ngFor="let item of filterData | filter:term">
+            <ion-label>{{item.firstName}} {{item.lastName}}</ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>
