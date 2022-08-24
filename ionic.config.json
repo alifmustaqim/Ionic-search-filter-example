@@ -1,0 +1,7 @@
+{
+  "name": "search-filter-example",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
